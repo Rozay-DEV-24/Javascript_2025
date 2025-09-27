@@ -1,3 +1,7 @@
+Debugging 
+
+1. Using console.log for Debugging :
+
 function taxRate(total) { 
     if (total > 150) { 
         return 1.1; 
@@ -8,15 +12,58 @@ function calculateCartTotal(cart) {
     let total = 0; 
     
     cart.forEach((item) => {
-        total += item.price + item.quantity;
+        console.log('Total before sum : ', total)  // Here
+        total += item.price * item.quantity;
     }); 
+    
     return total * taxRate(total); 
-    console.log('Total without tax:', calculateCartTotal(cart))
+    console.log('Total without tax:', calculateCartTotal(cart))  // Here
 } 
+
+
 
 const cart = [ 
     { name: 'Shoes', price: 50, quantity: 2 }, 
     { name: 'Hat', price: 20, quantity: 1 },
 ]; 
 
-console.log('Total with tax:', calculateCartTotal(cart))
+console.log('Total with tax:', calculateCartTotal(cart))  // Here
+
+
+// 2. Throwing custom errors - Try...Catch blocks
+
+function addToCart(cart, product, quantity) {
+    if (quantity <= 0) {
+        throw new Error(' Quantity must be a positive number');
+    }
+    cart.push({ product, quantity});
+}
+
+// regular expression
+
+addToCart([], {name: 'shoe'}, -1);
+
+// using Try...Catch method
+//  Example 1
+try{
+    addToCart([], {name: 'shoe'}, -1);
+} catch (error) {
+    console.log({error});
+    alert(error.message)
+}
+
+//  Example 2
+function calculateDiscount(price, discount) { 
+    try { 
+        if (discount > price) { 
+            throw new Error('Discount cannot exceed the price.')
+        } 
+        return price - discount; 
+    } catch (error) { 
+        console.log('Error in discount calculation:', error.message);
+        return price; 
+    }
+}
+
+const finalPrice = calculateDiscount(100, 120);
+console.log('Final Price : ', finalPrice)
