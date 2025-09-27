@@ -3,7 +3,7 @@ let a = 10;
 console.log(a);
 
 
-// Exercise : Swap Variables
+// Swap Variables
 
 let x = 2;
 let y = 4;

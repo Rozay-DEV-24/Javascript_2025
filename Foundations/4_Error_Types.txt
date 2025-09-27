@@ -1,0 +1,21 @@
+// Common Error Types
+
+1. Syntax Errors - Happens because of wrong syntax - Errors displays in code editor and console
+
+example :   function calcuateTotal(price, quantity {  // We missed to close ')'
+                return price * quantity;
+            }
+
+2. Runtime Errors - Happens while the code is running - Errors displays in console only
+
+example :   const user = { name: 'Alice'};
+            user.age.toString() // There is no age property, so the browser shows ' cannot read properties of undefined'
+
+3. Logical Errors [ User defined errors ]- When the user logic is wrong - Error is not displayed in console or editor
+
+example :   const user1 = { name: 'Alice', age: 27};
+            function isAdult(age) {
+                return age < 18;     
+            }
+
+            comsole.log(isAdult(user1.age));

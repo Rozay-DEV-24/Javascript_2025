@@ -1,0 +1,22 @@
+function taxRate(total) { 
+    if (total > 150) { 
+        return 1.1; 
+    } return 1.3;  
+}
+
+function calculateCartTotal(cart) { 
+    let total = 0; 
+    
+    cart.forEach((item) => {
+        total += item.price + item.quantity;
+    }); 
+    return total * taxRate(total); 
+    console.log('Total without tax:', calculateCartTotal(cart))
+} 
+
+const cart = [ 
+    { name: 'Shoes', price: 50, quantity: 2 }, 
+    { name: 'Hat', price: 20, quantity: 1 },
+]; 
+
+console.log('Total with tax:', calculateCartTotal(cart))
