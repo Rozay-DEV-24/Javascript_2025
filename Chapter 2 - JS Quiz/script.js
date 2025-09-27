@@ -105,8 +105,6 @@ function showResult(){
   resultElement.innerHTML = resultHTML;
 }
 
-
-
 submitElement.addEventListener('click', () => submitAnswer())
 
 loadQuestion();
