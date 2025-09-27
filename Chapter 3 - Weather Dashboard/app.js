@@ -32,7 +32,15 @@ async function getWeatherData(city){
     }
 }
 
+// Used in updateWeather()
+const cityAndCountry = document.getElementById('cityAndCountry');
+const tempValue      = document.getElementById('tempValue');
+const weatherDesc    = document.getElementById('weatherDesc');
+const humidityValue  = document.getElementById('humidityValue');
+const windValue      = document.getElementById('windValue');
+
 async function updateWeather() {
+
     const city = cityInput.value;
 
     if(!city) {
@@ -54,16 +62,26 @@ async function updateWeather() {
         //     <p> Humidity : ${weatherData.main.humidity}% </p>
         //     <p> Wind Speed : ${weatherData.wind.speed} m/s </p>            
         // `;
-        
+
         // method 2
-        weatherInfo.innerHTML = `
-            <h2> ${name}, ${sys.country} </h2>
-            <p>Temperature : ${main.temp} C</p>
-            <p> Weather : ${weather[0].description} </p>
-            <p> Humidity : ${main.humidity}% </p>
-            <p> Wind Speed : ${wind.speed} m/s </p>            
-        `;
+        // weatherInfo.innerHTML = `
+        //     <h2> ${name}, ${sys.country} </h2>
+        //     <p>Temperature : ${main.temp} C</p>
+        //     <p> Weather : ${weather[0].description} </p>
+        //     <p> Humidity : ${main.humidity}% </p>
+        //     <p> Wind Speed : ${wind.speed} m/s </p>            
+        // `;
+
+        // Method 3 - directly loading to html attributes
+        cityAndCountry.textContent = `${name}, ${sys.country}`;
+        tempValue.textContent      = main.temp;
+        weatherDesc.textContent    = weather[0].description;
+        humidityValue.textContent  = main.humidity;
+        windValue.textContent      = wind.speed;
         weatherInfo.classList.remove('hidden');
+
+        // setInterval(updateWeather, 2000) // To make continous calls every 2 seconds [ 2000 ]
+        // setTimeout((updateWeather, 10 * 60 * 1000)) // To update details every 10 mins [ 10 *60 * 1000 ]
     } catch (error) {
         console.log('Second catch block')
         displayError('Server Error');
