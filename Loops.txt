@@ -1,0 +1,60 @@
+// for-Loop
+
+for ( initialisation; condition; finalExpression)
+
+for (let i = 0; i<10; i++) {
+    statement
+}
+
+// Nested for-Loop
+
+for(let i = 0; i<10, i++) {
+    for(let j =0 ; j<10; j++) {
+        statement in j loop
+    }
+    staement in i loop
+}
+
+// While-Loop
+
+let count = 10;
+while (count > 0) {
+    console.log(count)
+    count --
+}
+
+//do=while
+
+do {
+     statement
+} while (condition)
+
+// Infinite loop
+
+for (let i = 0; i >= 0; i++) {
+    console.log('This will keep prinitng forever')
+}
+
+// for...in - iterates properties of an object
+// for..of - values of an array/ iterable objects
+
+for (const item of array) {
+    console.log(item)
+}
+
+// break & continue
+
+for (let i=0; i<10; i++) {
+    console.log(i);
+    if(i ===5) {
+        console.log('Stopping the loop at 5')
+        break
+    }
+}
+
+for (let i=0; i<10; i++) {
+    if (i % 2 !== 0) {
+        continue
+    }
+    console.log(i);
+}

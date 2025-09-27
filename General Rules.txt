@@ -1,0 +1,161 @@
+let number; //undefined
+let a = 10;
+console.log(a);
+
+
+// Exercise : Swap Variables
+
+let x = 2;
+let y = 4;
+
+console.log(x, y);
+
+let temp = x;
+x = y;
+y = temp;
+
+console.log(x, y);
+
+// Variable Naming best practises
+
+let user;
+let firstName;
+let firstName2;
+const PI = 3.14; // Immutable
+
+// Not_recommended
+
+var apple;
+let first_name;
+let 2firstName; // Not allowed to start with number
+let let; // Not allowed, since let , const, var are all keywords
+let var; // Not allowed
+let const; // Not allowed
+let first-nam; // Not allowed
+let name = 'John' , age = 20; 
+
+
+// Function Types 
+
+1. Perform a specific task
+
+function greet(username) {
+    console.log('Hello', username)
+}
+
+greet('John');
+
+2. Return a result
+
+function add(a,b) {
+    return a+b;
+}
+
+console.log(add(2, 3));
+
+// Data Types - Primitive 
+
+Strings, Number, Booleans, undefined, null
+
+// Data Types - Non primitive
+
+typeoff
+parseFloat
+parseInt
+
+// Arthimetic operators
+
++, -, *, /, %
+
+** (2 ** 3 = 2^3)
+++ (increment)
+-- (decrement)
+
+//Comparison operator
+
+Strict
+
+===
+!==
+>, <, >=, <=
+
+Loose equality
+== 
+
+// Assignment operators
+
+a = 1;
+a= a+1;
+a +=1;
+
+// Loggical operators
+
+ && [ And ]
+ || or // [ OR ]
+ ! [ Not ]
+
+// Ternary operator
+
+variable = condition ? value1 : value2;
+
+// Primitive types
+
+const number = 1
+const string = 'hello'
+const boolean = true
+const nullValue = null
+const undefinedValue = undefined
+
+let x = 5
+let y = x
+x = 10
+
+console.log(x, y) o/p [ 10, 5] 
+
+// Reference Types
+
+const object = { name: 'Alice', age: 30 } 
+const array = [1, 2, 3]
+function exampleFunction() {}
+
+let objl = { name: 'Alice' } 
+let obj2 = objl
+let obj3 = { ...obj1 }  // Desturcting creates new memory
+obj3.name = 'New name' 
+obj2.name = 'Bob'
+
+console. log(objl, obj2, obj3) o/p [ { name: 'Bob' } ,{ name: 'Bob' } ,{ name: 'New Name' }  ]
+
+
+// Scope - global, local, block
+
+1. Global scope - Variable can be used globally
+
+let golbalVariable = 'This is a global variable'
+function myFunction() {
+    condole. log (globalVariabie)  o/p - ‘this is a global variable’ 
+} 
+
+myFunction()
+
+condole. log (globalVariabie)  o/p - ‘this is a global variable’ 
+
+2. Local Scope - Variables used only with a function
+
+function func1() {
+    let localVariable = 'local'
+    condole. log (localVariable)  o/p - 'local'
+}
+
+func1()
+
+condole. log (localVariable)  o/p - localVariable is not defined
+
+3. Block Scope - Variable used within a statement / block
+
+if(true){
+    let blockVariable = 'block'
+    console.log(blockVariable) o/p - 'block'
+}
+
+console.log(blockVariable) o/p - blockVariable is not defined

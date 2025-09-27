@@ -1,0 +1,125 @@
+// Arrays
+
+const array = [1, 2, 3, 7, 10 ]
+const array2 = ['apple', 'orange', 'watermelon']
+const array3 = [ 3, 'orange', true, 'watermelon']
+
+array.length
+
+// To iterate elements of array withouth creating a new array
+
+array.forEach(function(item) {
+    console.log(item)
+})
+
+// Objects - Collection of key / value pairs
+
+{
+    key : value
+}
+
+const lightbulb = {
+    isOn = false,
+    color = 'yellow',
+    toggle: function() {
+        this.isOn = !this.isOn;
+    }
+    'color-temp': 3000
+}
+
+const lightBulb = {
+  isOn: false,
+  toggle() { this.isOn = !this.isOn; return this.isOn; }, // Same function as above but easier
+  'color-temp': 3000
+};
+
+// Accessing Object properties
+
+1. Dot
+console.log(lightBulb.isOn);
+console.log(lightBulb.toggle());
+
+2. Bracket (same effect)
+console.log(lightBulb['isOn']);
+console.log(lightBulb['toggle']());
+
+3. Keys with special chars -> bracket only
+console.log(lightBulb['color-temp']);
+
+4. Dynamic key
+const key = 'isOn';
+console.log(lightBulb[key]);
+
+// Adding and Modifying properties
+
+lightBulb.newProperty = false;
+lightBulb.color = 'orange'
+
+// this. method - Reference to object inside the function or global object
+
+// this in arrow function
+
+function traditionalMethod() {
+    console.log(this);
+}
+
+const deposit = () = => {
+    console.log(this);
+}
+
+// object with a method
+const myObject = {
+    name: "My Object",
+    traditionalMethod: traditionalFunction,
+    arrowMethod: arrowFunction
+};
+
+1. Global Context
+
+traditionalFunction();
+arrowFunction()
+
+2. As methods of an object
+
+myObject.traditionalMethod();
+myObject.arrowMethod();
+
+// Desturcting , Spread & Rest
+
+1. Desturcting :
+
+const person = {
+    name: "Alice",
+    age: 30,
+    city: "Wonderland" 
+}; 
+
+const { name, age } = person 
+
+const fruits = ["apple", "banana", "orange"] 
+
+const [firstFruit, secondFruit] = fruits ; 
+console. log(firstFruit)  
+console. log(secondFruit) 
+
+2. Spread [...]  - Used to copy values to an object or array from another
+
+const defaults = { color: "blue", size: "medium"}
+
+const product = {...defauolts, price: 10, name: 'T-Shirt'}
+
+const numbers = [1,2,3]
+const moreNumbers = [...numbers, 4, 5]
+
+3. Rest [...] - Is used in function parameters
+
+// Fucntion to add two number 
+const sum = (a, b) => {
+    return a+b
+}
+// to find sum of number dynamically
+const sum = (...numbers) => {
+    let total = 0;
+    numbers.forEach(number => total += number)
+    return total
+}
